@@ -98,7 +98,7 @@ resource "random_id" "cert" {
 
 resource "fortios_certificate_management_remote" "samlcert" {
   name        = var.custom_name == null ? "SAML-Remote-${random_id.cert.hex}" : var.custom_name
-  certificate = random_id.cert.keepers.cert
+  certificate = var.idp_cert
   scope       = "global"
 }
 
