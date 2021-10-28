@@ -54,7 +54,8 @@
  * }
  * 
  * module "name" {
- *   source = "/home/justinr/tf-modules/terraform-fortios-samlsp"
+ *     source  = "poroping/samlsp/fortios"
+ *     version = ">= 0.0.1"
  *   
  *   vdom = "root"
  *   idp_cert = local.aadcert
