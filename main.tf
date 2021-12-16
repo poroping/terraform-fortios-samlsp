@@ -105,7 +105,7 @@ resource "fortios_certificate_management_remote" "samlcert" {
 resource "fortios_user_saml" "saml_auth" {
   vdomparam = var.vdom
 
-  entity_id              = "https://${var.sso_base_url}/remote/saml/metadata/"
+  entity_id              = var.entity_id == null ? "https://${var.sso_base_url}/remote/saml/metadata/" : var.entity_id
   idp_cert               = fortios_certificate_management_remote.samlcert.name
   idp_entity_id          = var.idp_info.idp_entity_id
   idp_single_logout_url  = var.idp_info.idp_single_logout_url

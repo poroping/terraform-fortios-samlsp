@@ -90,6 +90,7 @@ resource "fortios_user_group" "saml_group" {
 | <a name="input_sso_base_url"></a> [sso\_base\_url](#input\_sso\_base\_url) | URL the IDP will send SAML auth requests. Ex. vpn.fortigate.com:4443 | `string` | n/a | yes |
 | <a name="input_custom_name"></a> [custom\_name](#input\_custom\_name) | Custom object name. | `string` | `null` | no |
 | <a name="input_digest_method"></a> [digest\_method](#input\_digest\_method) | Digest Method Algorithm. | `string` | `"sha1"` | no |
+| <a name="input_entity_id"></a> [entity\_id](#input\_entity\_id) | Override the SP entity ID | `string` | `null` | no |
 | <a name="input_group_assertion"></a> [group\_assertion](#input\_group\_assertion) | Attribute in assertion to map to groups. | `string` | `"groups"` | no |
 | <a name="input_username_assertion"></a> [username\_assertion](#input\_username\_assertion) | Attribute in assertion to map to username. | `string` | `"username"` | no |
 | <a name="input_vdom"></a> [vdom](#input\_vdom) | Name of VDOM to create SAML user on. | `string` | `null` | no |

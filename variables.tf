@@ -3,6 +3,12 @@ variable "sso_base_url" {
   type        = string
 }
 
+variable "entity_id" {
+  description = "Override the SP entity ID"
+  type        = string
+  default     = null
+}
+
 variable "digest_method" {
   description = "Digest Method Algorithm."
   type        = string
