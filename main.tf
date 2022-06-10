@@ -97,9 +97,11 @@ resource "random_id" "cert" {
 }
 
 resource "fortios_certificate_management_remote" "samlcert" {
+  vdomparam = var.vdom
+
   name        = var.custom_name == null ? "SAML-Remote-${random_id.cert.hex}" : var.custom_name
   certificate = random_id.cert.keepers.cert
-  scope       = "global"
+  scope       = "vdom"
 }
 
 resource "fortios_user_saml" "saml_auth" {
